@@ -41,9 +41,90 @@ html, body{
 
 /*// ELEMENTS TO ANIMATE //*/
 
+.mario{
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  animation: drive 3s both infinite linear, jump 0.3 1.2s ease; 
+  /* animation-duration: 3s;
+  /* animation name invokes keyframe with that name, 
+      duration is how long it takes to complete
+  */
+  /* animation-fill-mode: both; */
+  /* Forward makes the element stay at to position after animation has finished 
+      Backwards starts an animation from the from position but doesn't also use forward to keep it at end
+      Both will start at from position, and keep it at to position
+  */
+  /* animation-delay: 2s;
+  This gives animation 2s delay before it starts */
+  /* animation-iteration-count: infinite; */
+  /* This says how many times animation repeats. can be number value or infinite */
+  /* animation-timing-function: linear;  */
+  /* This will affect how fast animation starts, ends, or set to constant speed
+      can also pass in cubic-bezier to customize timing (cubic-bezier.com)
+  */
+}
+
+.luigi{
+  position: absolute;
+  top: 100px;
+  left: 0;
+  animation-name: drive;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  /* direction reverse causes animation to start at to and end at from */
+  animation-timing-function: linear;
+}
+
+.cloud{
+  position: absolute;
+}
+
+.cloud:nth-child(1){
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  animation: wind 80s linear infinite reverse;
+  /* animation shorthand:
+      specify keyframe
+      specify animation duration
+      specify animation timing function
+      specify iteration count
+      specify direction
+  */
+}
+
+.cloud:nth-child(2){
+  width: 300px;
+  top: 0;
+  animation: wind 50s linear infinite reverse;
+}
 
 
 /*// KEYFRAMES //*/
+/* first define keyframe name
+    then make from bracket(where element starts on page)
+    then make to bracket(where element goes to on page)
+*/
+@keyframes drive{
+  from{ transform: translateX(-200px) }
+  to{ transform: translateX(1500px) }
+}
+
+@keyframes wind{
+  from{left: -300px}
+  to{left: 100%}
+}
+
+@keyframes jump{
+  0%{top: -40px}
+  50%{top: -100px}
+  100%{top: -40px}
+  /* This allows you to control at what % animation is complete to do something */
+}
+
 
 
 

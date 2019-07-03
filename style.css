@@ -1,5 +1,39 @@
+body{
+  background: lightblue;
+  text-align: center;
+}
+
 .wrapper{
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+}
+
+img{
+  transform: rotateZ(15deg) translate(220px, -30px)
+  /* 
+    rotate will rotate an image around specified axis
+    translate will move an image on either x or y axis
+    scale will make an image larger or smaller (scale(1) is same size image so go up or down by x amount from there)
+   */
+}
+
+.circle{
+  width: 100px;
+  padding: 50px 0;
+  line-height: 0;
+  margin: 60px auto;
+  background: pink;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 1s 1s, transform 0.3s 1s; 
+  /* this transition causes background effect change to take 1 second
+      transform rotate takes .3s after a 1s delay
+  */
+}
+
+.circle:hover{
+  background: salmon;
+  transform: rotate(360deg);
 }
